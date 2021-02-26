@@ -1,3 +1,3 @@
-# skku-pred
+# skku-example
 
-hsson
+hsson-website
