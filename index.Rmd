@@ -1,0 +1,24 @@
+---
+title: "hsson"
+image: "your picture.png"
+links:
+  - label: GitHub
+    url: "https://github.com/hsson85"
+  - label: Email
+    url: "mailto:call9347@gmail.com"
+site: distill::distill_website
+output:
+  postcards::trestles
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+# Learn more about publishing to GitHub Pages at:
+# https://rstudio.github.io/distill/publish_website.html#github-pages
+
+```
+
