@@ -1,6 +1,6 @@
 ---
-title: "hsson"
-image: "your picture.png"
+title: "hyunsub son"
+image: "hsson.jpeg"
 links:
   - label: GitHub
     url: "https://github.com/hsson85"
@@ -12,6 +12,15 @@ description:
 output:
   postcards::trestles
 ---
+## HELLO
+Welcome to my homepage
+
+## Education
+**Mathatics**|2012
+
+**Actuarial science**|2015
+
+## Recent Roles
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
