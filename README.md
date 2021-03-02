@@ -1,3 +1,3 @@
-# skku-example
+# skku-project1
 
 hsson-website
