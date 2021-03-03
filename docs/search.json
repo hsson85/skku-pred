@@ -2,19 +2,24 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About this site",
-      "description": "Some additional details about the website",
+      "title": "hsson - Portfolio",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-03-02T13:02:28+00:00"
+      "contents": "\nContents\n\n1.\n2.\n\n\n\n\n",
+      "last_modified": "2021-03-03T13:44:27+00:00"
     },
     {
       "path": "index.html",
       "title": "hyunsub son",
       "description": "Welcome to my homepage",
       "author": [],
-      "contents": "\n\n          \n          \n          hsson\n          \n          \n          Home\n          Portfolio\n          ☰\n          \n          \n      \n        \n          \n            \n              \n            \n              hyunsub son\n            \n            \n              \n                \n                    \n                      \n                        GitHub\n                      \n                    \n                  \n                                    \n                    \n                      \n                        Email\n                      \n                    \n                  \n                                  \n            \n          \n        \n        \n        \n          \n            \n            HELLO\n            Welcome to my homepage\n            \n            \n            Education\n            Mathematics|2012\n            Actuarial science|2015\n            \n            \n            Recent Roles\n            Researcher|Korea Institute for Health and Social Affair,2015~2016\n            Researcher|National Pension Research Institute,2016~\n            \n          \n        \n      \n    \n\n    \n      \n        \n          \n            \n              \n            \n              hyunsub son\n            \n            \n              \n                \n                                    \n                    \n                      GitHub\n                    \n                  \n                                    \n                    \n                      Email\n                    \n                  \n                                  \n              \n            \n            \n              \n              HELLO\n              Welcome to my homepage\n              \n              \n              Education\n              Mathematics|2012\n              Actuarial science|2015\n              \n              \n              Recent Roles\n              Researcher|Korea Institute for Health and Social Affair,2015~2016\n              Researcher|National Pension Research Institute,2016~\n              \n            \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2021-03-03T11:43:03+00:00"
+      "contents": "\n\n          \n          \n          hsson\n          \n          \n          Home\n          Portfolio\n          ☰\n          \n          \n      \n        \n          \n            \n              \n            \n              hyunsub son\n            \n            \n              \n                \n                    \n                      \n                        GitHub\n                      \n                    \n                  \n                                    \n                    \n                      \n                        Email\n                      \n                    \n                  \n                                  \n            \n          \n        \n        \n        \n          \n            \n            HELLO\n            Welcome to my homepage\n            \n            \n            Education\n            Mathematics|2005~2012Actuarial science|2013~2015\n            \n            \n            Recent Roles\n            Researcher|Korea Institute for Health And Social Affair,2015~2016Researcher|National Pension Research Institute,2016~\n            \n          \n        \n      \n    \n\n    \n      \n        \n          \n            \n              \n            \n              hyunsub son\n            \n            \n              \n                \n                                    \n                    \n                      GitHub\n                    \n                  \n                                    \n                    \n                      Email\n                    \n                  \n                                  \n              \n            \n            \n              \n              HELLO\n              Welcome to my homepage\n              \n              \n              Education\n              Mathematics|2005~2012Actuarial science|2013~2015\n              \n              \n              Recent Roles\n              Researcher|Korea Institute for Health And Social Affair,2015~2016Researcher|National Pension Research Institute,2016~\n              \n            \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2021-03-03T13:26:26+00:00"
+    },
+    {
+      "path": "README.html",
+      "author": [],
+      "contents": "\nskku-project1\nhello // hsson-website\n\n\n",
+      "last_modified": "2021-03-03T13:44:27+00:00"
     }
   ],
   "collections": []
