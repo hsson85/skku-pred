@@ -6,4 +6,4 @@ title: "hsson - Portfolio"
 knitr::opts_chunk$set(echo = FALSE)
 ```
 ## Contents
-> # 1.
+> # 1. 
