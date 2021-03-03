@@ -16,11 +16,14 @@ output:
 Welcome to my homepage
 
 ## Education
-**Mathatics**|2012
+**Mathematics**|2012
 
 **Actuarial science**|2015
 
 ## Recent Roles
+**Researcher**|Korea Institute for Health and Social Affair,2015~2016
+
+**Researcher**|National Pension Research Institute,2016~
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
