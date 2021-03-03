@@ -8,7 +8,7 @@ links:
     url: "mailto:call9347@gmail.com"
 site: distill::distill_website
 description: 
-  Welcome to my homepage
+  
 output:
   postcards::trestles
 ---
@@ -20,8 +20,8 @@ Welcome to my homepage
 **Actuarial science**|2013~2015
 
 ## Recent Roles
-**Researcher**|Korea Institute for Health And Social Affair,2015~2016\
-**Researcher**|National Pension Research Institute,2016~
+**Researcher**|Korea Institute for Health And Social Affair, 2015~2016\
+**Researcher**|National Pension Research Institute, 2016~
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
