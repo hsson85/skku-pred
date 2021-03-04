@@ -1,5 +1,5 @@
 ---
-title: "hyunsub son"
+title: "Hyunsub Son"
 image: "hsson.jpeg"
 links:
   - label: GitHub
