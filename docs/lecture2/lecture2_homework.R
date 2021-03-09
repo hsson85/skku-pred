@@ -1,0 +1,67 @@
+summarise(ames_raw)
+
+AmesHousing::ames_raw
+
+
+library(AmesHousing)
+head(ames_raw)
+glimpse(ames_raw)
+
+ames_raw %>% 
+  filter('MS SubClass' == "020")
+
+head(ames_raw)
+
+ames_raw %>% 
+  filter('MS SubClass' == "20")
+
+ames_raw %>%
+  filter('Roof Matl' == "CompShg")
+
+head(ames_raw)
+ames_raw %>%
+  filter('MS SubClass' == 020)
+
+summarise(ames_raw)
+
+ames_raw %>%
+  filter(Neighborhood == "Veenker")
+
+ames_raw %>%
+  filter(Utilities == "AllPub")
+
+ames_raw %>%
+  group_by(Street) %>%
+  summarize(`Lot Frontage` = mean(`Lot Frontage`,  na.rm = TRUE),
+            `Lot Area` = mean(`Lot Area`, na.rm = TRUE))
+
+library(ggplot2)
+   
+p<-ggplot(data = ames_raw %>%
+            group_by(Street),
+          aes(x=`Year Built`,
+              y=`Lot Frontage`))
+p<- p + geom_point(aes(color = as.factor(Street)))
+p
+
+g<-ggplot(data = ames_raw %>%
+            group_by(Neighborhood),
+          aes(x=`Year Built`,
+              y=`Lot Frontage`))
+g<- g + geom_point(aes(color = as.factor(Neighborhood)))
+g
+
+h<-ggplot(data = ames_raw %>%
+            group_by(`Lot Shape`),
+          aes(x=`Year Built`,
+              y=`SalePrice`))
+h<- h + geom_point(aes(color = as.factor(`Lot Shape`)))
+h
+
+
+s<-ggplot(data = ames_raw %>%
+            group_by(`Year Built`),
+          aes(x= Street,
+              y=`SalePrice`))
+s<- s + geom_point(aes(color = as.factor(`Year Built`)))
+s

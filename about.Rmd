@@ -6,4 +6,16 @@ title: "hsson - Portfolio"
 knitr::opts_chunk$set(echo = FALSE)
 ```
 ## Contents
-# 1. C language
+# 1. Lecture 2
+
+```{r}
+library(tidyverse)
+library(AmesHousing)
+library(ggplot2)
+h<-ggplot(data = ames_raw %>%
+            group_by(`Lot Shape`),
+          aes(x=`Year Built`,
+              y=`SalePrice`))
+h<- h + geom_point(aes(color = as.factor(`Lot Shape`)))
+h
+```
