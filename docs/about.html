@@ -2082,15 +2082,70 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-article">
 <h2 id="contents">Contents</h2>
 <h1 id="lecture-2-homework">1. Lecture 2 Homework</h1>
+<h3 id="filter">1-1. filter( )</h3>
+<div class="layout-chunk" data-layout="l-body">
+<pre><code># A tibble: 2,918 x 82
+   Order PID       `MS SubClass` `MS Zoning` `Lot Frontage` `Lot Area`
+   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;                &lt;int&gt;      &lt;int&gt;
+ 1     1 05263011… 020           RL                     141      31770
+ 2     2 05263500… 020           RH                      80      11622
+ 3     3 05263510… 020           RL                      81      14267
+ 4     4 05263530… 020           RL                      93      11160
+ 5     5 05271050… 060           RL                      74      13830
+ 6     6 05271050… 060           RL                      78       9978
+ 7     7 05271271… 120           RL                      41       4920
+ 8     8 05271450… 120           RL                      43       5005
+ 9     9 05271460… 120           RL                      39       5389
+10    10 05271621… 060           RL                      60       7500
+# … with 2,908 more rows, and 76 more variables: Street &lt;chr&gt;,
+#   Alley &lt;chr&gt;, Lot Shape &lt;chr&gt;, Land Contour &lt;chr&gt;,
+#   Utilities &lt;chr&gt;, Lot Config &lt;chr&gt;, Land Slope &lt;chr&gt;,
+#   Neighborhood &lt;chr&gt;, Condition 1 &lt;chr&gt;, Condition 2 &lt;chr&gt;,
+#   Bldg Type &lt;chr&gt;, House Style &lt;chr&gt;, Overall Qual &lt;int&gt;,
+#   Overall Cond &lt;int&gt;, Year Built &lt;int&gt;, Year Remod/Add &lt;int&gt;,
+#   Roof Style &lt;chr&gt;, Roof Matl &lt;chr&gt;, Exterior 1st &lt;chr&gt;,
+#   Exterior 2nd &lt;chr&gt;, Mas Vnr Type &lt;chr&gt;, Mas Vnr Area &lt;int&gt;,
+#   Exter Qual &lt;chr&gt;, Exter Cond &lt;chr&gt;, Foundation &lt;chr&gt;,
+#   Bsmt Qual &lt;chr&gt;, Bsmt Cond &lt;chr&gt;, Bsmt Exposure &lt;chr&gt;,
+#   BsmtFin Type 1 &lt;chr&gt;, BsmtFin SF 1 &lt;int&gt;, BsmtFin Type 2 &lt;chr&gt;,
+#   BsmtFin SF 2 &lt;int&gt;, Bsmt Unf SF &lt;int&gt;, Total Bsmt SF &lt;int&gt;,
+#   Heating &lt;chr&gt;, Heating QC &lt;chr&gt;, Central Air &lt;chr&gt;,
+#   Electrical &lt;chr&gt;, 1st Flr SF &lt;int&gt;, 2nd Flr SF &lt;int&gt;,
+#   Low Qual Fin SF &lt;int&gt;, Gr Liv Area &lt;int&gt;, Bsmt Full Bath &lt;int&gt;,
+#   Bsmt Half Bath &lt;int&gt;, Full Bath &lt;int&gt;, Half Bath &lt;int&gt;,
+#   Bedroom AbvGr &lt;int&gt;, Kitchen AbvGr &lt;int&gt;, Kitchen Qual &lt;chr&gt;,
+#   TotRms AbvGrd &lt;int&gt;, Functional &lt;chr&gt;, Fireplaces &lt;int&gt;,
+#   Fireplace Qu &lt;chr&gt;, Garage Type &lt;chr&gt;, Garage Yr Blt &lt;int&gt;,
+#   Garage Finish &lt;chr&gt;, Garage Cars &lt;int&gt;, Garage Area &lt;int&gt;,
+#   Garage Qual &lt;chr&gt;, Garage Cond &lt;chr&gt;, Paved Drive &lt;chr&gt;,
+#   Wood Deck SF &lt;int&gt;, Open Porch SF &lt;int&gt;, Enclosed Porch &lt;int&gt;,
+#   3Ssn Porch &lt;int&gt;, Screen Porch &lt;int&gt;, Pool Area &lt;int&gt;,
+#   Pool QC &lt;chr&gt;, Fence &lt;chr&gt;, Misc Feature &lt;chr&gt;, Misc Val &lt;int&gt;,
+#   Mo Sold &lt;int&gt;, Yr Sold &lt;int&gt;, Sale Type &lt;chr&gt;,
+#   Sale Condition &lt;chr&gt;, SalePrice &lt;int&gt;</code></pre>
+</div>
+<h3 id="mix-group_by-summarize">1-2. Mix group_by( ) &amp; summarize( )</h3>
 <div class="layout-chunk" data-layout="l-body">
 <pre><code># A tibble: 2 x 3
   Street SalePrice `Lot Frontage`
 * &lt;chr&gt;      &lt;dbl&gt;          &lt;dbl&gt;
 1 Grvl     106663.           88.2
 2 Pave     181101.           69.1</code></pre>
-<p><img src="about_files/figure-html5/unnamed-chunk-1-1.png" width="624" /></p>
+<pre><code># A tibble: 6 x 2
+  `Sale Condition` SalePrice
+* &lt;chr&gt;                &lt;dbl&gt;
+1 Abnorml            140396.
+2 AdjLand            108917.
+3 Alloca             161844.
+4 Family             157489.
+5 Normal             175568.
+6 Partial            273374.</code></pre>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h3 id="ggplot">1-3. ggplot( )</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="about_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
+</div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

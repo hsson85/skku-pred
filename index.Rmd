@@ -16,8 +16,8 @@ output:
 Welcome to my homepage
 
 ## Education
-**Mathematics**|2005~2012\
-**Actuarial science**|2013~2015
+**Mathematics**| 2005~2012\
+**Actuarial science**| 2013~2015
 
 ## Recent Roles
 **Researcher**|Korea Institute for Health And Social Affair, 2015~2016\

@@ -35,6 +35,9 @@ ames_raw %>%
   summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE),
             `Lot Frontage` = mean(`Lot Frontage`, na.rm = TRUE))
 
+ames_raw %>%
+  filter(Street == "Pave") 
+
 library(ggplot2)
    
 p<-ggplot(data = ames_raw %>%
@@ -58,6 +61,19 @@ h<-ggplot(data = ames_raw %>%
 h<- h + geom_point(aes(color = as.factor(`Lot Shape`)))
 h
 
+h<-ggplot(data = ames_raw %>%
+            group_by(`Sale Condition`),
+          aes(x=`Year Built`,
+              y=`SalePrice`))
+h<- h + geom_point(aes(color = as.factor(`Sale Condition`)))
+h
+
+h<-ggplot(data = ames_raw %>%
+            filter(`Sale Condition`== "Family"),
+          aes(x=`Year Built`,
+              y=`SalePrice`))
+h<- h + geom_point(aes(color = as.factor(`Sale Condition`)))
+h
 
 s<-ggplot(data = ames_raw %>%
             group_by(`Year Built`),
@@ -65,3 +81,8 @@ s<-ggplot(data = ames_raw %>%
               y=`SalePrice`))
 s<- s + geom_point(aes(color = as.factor(`Year Built`)))
 s
+
+ames_raw %>%
+  group_by(`Sale Condition`) %>%
+  summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE))
+
