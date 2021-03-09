@@ -41,3 +41,11 @@ g<-ggplot(data = ames_raw %>%
 g<- g + geom_point(aes(color = as.factor(`Lot Shape`)))
 g
 ```
+### 1-4. box plot( )
+```{r}
+library(tidyverse)
+library(AmesHousing)
+library(ggplot2)
+ggplot(ames_raw, aes(y = `SalePrice`)) +
+  geom_boxplot()
+```

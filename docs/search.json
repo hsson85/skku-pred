@@ -4,8 +4,8 @@
       "path": "about.html",
       "title": "hsson - Portfolio",
       "author": [],
-      "contents": "\nContents\n1. Lecture 2 Homework\n1-1. Mix filter( ) & select( )\n\n# A tibble: 2,918 x 3\n   Street `Year Built` SalePrice\n   <chr>         <int>     <int>\n 1 Pave           1960    215000\n 2 Pave           1961    105000\n 3 Pave           1958    172000\n 4 Pave           1968    244000\n 5 Pave           1997    189900\n 6 Pave           1998    195500\n 7 Pave           2001    213500\n 8 Pave           1992    191500\n 9 Pave           1995    236500\n10 Pave           1999    189000\n# … with 2,908 more rows\n\n1-2. Mix group_by( ) & summarize( )\n\n# A tibble: 2 x 3\n  Street SalePrice `Lot Frontage`\n* <chr>      <dbl>          <dbl>\n1 Grvl     106663.           88.2\n2 Pave     181101.           69.1\n# A tibble: 6 x 2\n  `Sale Condition` SalePrice\n* <chr>                <dbl>\n1 Abnorml            140396.\n2 AdjLand            108917.\n3 Alloca             161844.\n4 Family             157489.\n5 Normal             175568.\n6 Partial            273374.\n\n1-3. ggplot( )\n\n\n\n\n\n\n",
-      "last_modified": "2021-03-09T12:47:40+00:00"
+      "contents": "\nContents\n1. Lecture 2 Homework\n1-1. Mix filter( ) & select( )\n\n# A tibble: 2,918 x 3\n   Street `Year Built` SalePrice\n   <chr>         <int>     <int>\n 1 Pave           1960    215000\n 2 Pave           1961    105000\n 3 Pave           1958    172000\n 4 Pave           1968    244000\n 5 Pave           1997    189900\n 6 Pave           1998    195500\n 7 Pave           2001    213500\n 8 Pave           1992    191500\n 9 Pave           1995    236500\n10 Pave           1999    189000\n# … with 2,908 more rows\n\n1-2. Mix group_by( ) & summarize( )\n\n# A tibble: 2 x 3\n  Street SalePrice `Lot Frontage`\n* <chr>      <dbl>          <dbl>\n1 Grvl     106663.           88.2\n2 Pave     181101.           69.1\n# A tibble: 6 x 2\n  `Sale Condition` SalePrice\n* <chr>                <dbl>\n1 Abnorml            140396.\n2 AdjLand            108917.\n3 Alloca             161844.\n4 Family             157489.\n5 Normal             175568.\n6 Partial            273374.\n\n1-3. ggplot( )\n\n\n\n1-4. box plot( )\n\n\n\n\n\n\n",
+      "last_modified": "2021-03-09T12:57:42+00:00"
     },
     {
       "path": "index.html",
@@ -18,7 +18,7 @@
       "path": "README.html",
       "author": [],
       "contents": "\nskku-project1\nhello // hsson-website\n\n\n",
-      "last_modified": "2021-03-09T12:47:40+00:00"
+      "last_modified": "2021-03-09T12:57:42+00:00"
     }
   ],
   "collections": []
