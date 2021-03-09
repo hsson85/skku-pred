@@ -2082,47 +2082,22 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-article">
 <h1 id="contents">Contents</h1>
 <h2 id="lecture-2-homework">1. Lecture 2 Homework</h2>
-<h3 id="filter">1-1. filter( )</h3>
+<h3 id="mix-filter-select">1-1. Mix filter( ) &amp; select( )</h3>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 2,918 x 82
-   Order PID       `MS SubClass` `MS Zoning` `Lot Frontage` `Lot Area`
-   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;                &lt;int&gt;      &lt;int&gt;
- 1     1 05263011… 020           RL                     141      31770
- 2     2 05263500… 020           RH                      80      11622
- 3     3 05263510… 020           RL                      81      14267
- 4     4 05263530… 020           RL                      93      11160
- 5     5 05271050… 060           RL                      74      13830
- 6     6 05271050… 060           RL                      78       9978
- 7     7 05271271… 120           RL                      41       4920
- 8     8 05271450… 120           RL                      43       5005
- 9     9 05271460… 120           RL                      39       5389
-10    10 05271621… 060           RL                      60       7500
-# … with 2,908 more rows, and 76 more variables: Street &lt;chr&gt;,
-#   Alley &lt;chr&gt;, Lot Shape &lt;chr&gt;, Land Contour &lt;chr&gt;,
-#   Utilities &lt;chr&gt;, Lot Config &lt;chr&gt;, Land Slope &lt;chr&gt;,
-#   Neighborhood &lt;chr&gt;, Condition 1 &lt;chr&gt;, Condition 2 &lt;chr&gt;,
-#   Bldg Type &lt;chr&gt;, House Style &lt;chr&gt;, Overall Qual &lt;int&gt;,
-#   Overall Cond &lt;int&gt;, Year Built &lt;int&gt;, Year Remod/Add &lt;int&gt;,
-#   Roof Style &lt;chr&gt;, Roof Matl &lt;chr&gt;, Exterior 1st &lt;chr&gt;,
-#   Exterior 2nd &lt;chr&gt;, Mas Vnr Type &lt;chr&gt;, Mas Vnr Area &lt;int&gt;,
-#   Exter Qual &lt;chr&gt;, Exter Cond &lt;chr&gt;, Foundation &lt;chr&gt;,
-#   Bsmt Qual &lt;chr&gt;, Bsmt Cond &lt;chr&gt;, Bsmt Exposure &lt;chr&gt;,
-#   BsmtFin Type 1 &lt;chr&gt;, BsmtFin SF 1 &lt;int&gt;, BsmtFin Type 2 &lt;chr&gt;,
-#   BsmtFin SF 2 &lt;int&gt;, Bsmt Unf SF &lt;int&gt;, Total Bsmt SF &lt;int&gt;,
-#   Heating &lt;chr&gt;, Heating QC &lt;chr&gt;, Central Air &lt;chr&gt;,
-#   Electrical &lt;chr&gt;, 1st Flr SF &lt;int&gt;, 2nd Flr SF &lt;int&gt;,
-#   Low Qual Fin SF &lt;int&gt;, Gr Liv Area &lt;int&gt;, Bsmt Full Bath &lt;int&gt;,
-#   Bsmt Half Bath &lt;int&gt;, Full Bath &lt;int&gt;, Half Bath &lt;int&gt;,
-#   Bedroom AbvGr &lt;int&gt;, Kitchen AbvGr &lt;int&gt;, Kitchen Qual &lt;chr&gt;,
-#   TotRms AbvGrd &lt;int&gt;, Functional &lt;chr&gt;, Fireplaces &lt;int&gt;,
-#   Fireplace Qu &lt;chr&gt;, Garage Type &lt;chr&gt;, Garage Yr Blt &lt;int&gt;,
-#   Garage Finish &lt;chr&gt;, Garage Cars &lt;int&gt;, Garage Area &lt;int&gt;,
-#   Garage Qual &lt;chr&gt;, Garage Cond &lt;chr&gt;, Paved Drive &lt;chr&gt;,
-#   Wood Deck SF &lt;int&gt;, Open Porch SF &lt;int&gt;, Enclosed Porch &lt;int&gt;,
-#   3Ssn Porch &lt;int&gt;, Screen Porch &lt;int&gt;, Pool Area &lt;int&gt;,
-#   Pool QC &lt;chr&gt;, Fence &lt;chr&gt;, Misc Feature &lt;chr&gt;, Misc Val &lt;int&gt;,
-#   Mo Sold &lt;int&gt;, Yr Sold &lt;int&gt;, Sale Type &lt;chr&gt;,
-#   Sale Condition &lt;chr&gt;, SalePrice &lt;int&gt;</code></pre>
+<pre><code># A tibble: 2,918 x 3
+   Street `Year Built` SalePrice
+   &lt;chr&gt;         &lt;int&gt;     &lt;int&gt;
+ 1 Pave           1960    215000
+ 2 Pave           1961    105000
+ 3 Pave           1958    172000
+ 4 Pave           1968    244000
+ 5 Pave           1997    189900
+ 6 Pave           1998    195500
+ 7 Pave           2001    213500
+ 8 Pave           1992    191500
+ 9 Pave           1995    236500
+10 Pave           1999    189000
+# … with 2,908 more rows</code></pre>
 </div>
 <h3 id="mix-group_by-summarize">1-2. Mix group_by( ) &amp; summarize( )</h3>
 <div class="layout-chunk" data-layout="l-body">

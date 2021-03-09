@@ -86,3 +86,6 @@ ames_raw %>%
   group_by(`Sale Condition`) %>%
   summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE))
 
+ames_raw %>%
+  select(Street,`Year Built`,`SalePrice`) %>%
+  filter(Street == "Pave") 

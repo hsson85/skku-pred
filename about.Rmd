@@ -8,11 +8,12 @@ knitr::opts_chunk$set(echo = FALSE)
 # Contents
 
 ## 1. Lecture 2 Homework
-### 1-1. filter( )
+### 1-1. Mix filter( ) & select( )
 ```{r}
 library(tidyverse)
 library(AmesHousing)
 ames_raw %>%
+  select(Street,`Year Built`,`SalePrice`) %>%
   filter(Street == "Pave") 
 ```
 ### 1-2. Mix group_by( ) & summarize( )
