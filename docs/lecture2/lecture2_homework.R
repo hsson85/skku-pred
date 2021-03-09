@@ -32,8 +32,8 @@ ames_raw %>%
 
 ames_raw %>%
   group_by(Street) %>%
-  summarize(`Lot Frontage` = mean(`Lot Frontage`,  na.rm = TRUE),
-            `Lot Area` = mean(`Lot Area`, na.rm = TRUE))
+  summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE),
+            `Lot Frontage` = mean(`Lot Frontage`, na.rm = TRUE))
 
 library(ggplot2)
    

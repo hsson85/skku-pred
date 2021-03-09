@@ -6,12 +6,17 @@ title: "hsson - Portfolio"
 knitr::opts_chunk$set(echo = FALSE)
 ```
 ## Contents
-# 1. Lecture 2
+# 1. Lecture 2 Homework
 
 ```{r}
 library(tidyverse)
 library(AmesHousing)
 library(ggplot2)
+ames_raw %>%
+  group_by(Street) %>%
+  summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE),
+            `Lot Frontage` = mean(`Lot Frontage`, na.rm = TRUE))
+
 h<-ggplot(data = ames_raw %>%
             group_by(`Lot Shape`),
           aes(x=`Year Built`,

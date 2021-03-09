@@ -4,8 +4,8 @@
       "path": "about.html",
       "title": "hsson - Portfolio",
       "author": [],
-      "contents": "\nContents\n1. Lecture 2\n\n\n\n\n\n\n",
-      "last_modified": "2021-03-09T11:22:50+00:00"
+      "contents": "\nContents\n1. Lecture 2 Homework\n\n# A tibble: 2 x 3\n  Street SalePrice `Lot Frontage`\n* <chr>      <dbl>          <dbl>\n1 Grvl     106663.           88.2\n2 Pave     181101.           69.1\n\n\n\n\n\n",
+      "last_modified": "2021-03-09T11:34:55+00:00"
     },
     {
       "path": "index.html",
@@ -18,7 +18,7 @@
       "path": "README.html",
       "author": [],
       "contents": "\nskku-project1\nhello // hsson-website\n\n\n",
-      "last_modified": "2021-03-09T11:22:51+00:00"
+      "last_modified": "2021-03-09T11:34:55+00:00"
     }
   ],
   "collections": []
