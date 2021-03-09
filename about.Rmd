@@ -5,9 +5,9 @@ title: "hsson - Portfolio"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-## Contents
-# 1. Lecture 2 Homework
+# Contents
 
+## 1. Lecture 2 Homework
 ### 1-1. filter( )
 ```{r}
 library(tidyverse)
@@ -15,7 +15,6 @@ library(AmesHousing)
 ames_raw %>%
   filter(Street == "Pave") 
 ```
-
 ### 1-2. Mix group_by( ) & summarize( )
 ```{r}
 library(tidyverse)
@@ -29,7 +28,6 @@ ames_raw %>%
   group_by(`Sale Condition`) %>%
   summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE))
 ```
-
 ### 1-3. ggplot( )
 ```{r}
 library(tidyverse)

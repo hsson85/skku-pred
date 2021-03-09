@@ -5,7 +5,7 @@
       "title": "hsson - Portfolio",
       "author": [],
       "contents": "\nContents\n1. Lecture 2 Homework\n1-1. filter( )\n\n# A tibble: 2,918 x 82\n   Order PID       `MS SubClass` `MS Zoning` `Lot Frontage` `Lot Area`\n   <int> <chr>     <chr>         <chr>                <int>      <int>\n 1     1 05263011… 020           RL                     141      31770\n 2     2 05263500… 020           RH                      80      11622\n 3     3 05263510… 020           RL                      81      14267\n 4     4 05263530… 020           RL                      93      11160\n 5     5 05271050… 060           RL                      74      13830\n 6     6 05271050… 060           RL                      78       9978\n 7     7 05271271… 120           RL                      41       4920\n 8     8 05271450… 120           RL                      43       5005\n 9     9 05271460… 120           RL                      39       5389\n10    10 05271621… 060           RL                      60       7500\n# … with 2,908 more rows, and 76 more variables: Street <chr>,\n#   Alley <chr>, Lot Shape <chr>, Land Contour <chr>,\n#   Utilities <chr>, Lot Config <chr>, Land Slope <chr>,\n#   Neighborhood <chr>, Condition 1 <chr>, Condition 2 <chr>,\n#   Bldg Type <chr>, House Style <chr>, Overall Qual <int>,\n#   Overall Cond <int>, Year Built <int>, Year Remod/Add <int>,\n#   Roof Style <chr>, Roof Matl <chr>, Exterior 1st <chr>,\n#   Exterior 2nd <chr>, Mas Vnr Type <chr>, Mas Vnr Area <int>,\n#   Exter Qual <chr>, Exter Cond <chr>, Foundation <chr>,\n#   Bsmt Qual <chr>, Bsmt Cond <chr>, Bsmt Exposure <chr>,\n#   BsmtFin Type 1 <chr>, BsmtFin SF 1 <int>, BsmtFin Type 2 <chr>,\n#   BsmtFin SF 2 <int>, Bsmt Unf SF <int>, Total Bsmt SF <int>,\n#   Heating <chr>, Heating QC <chr>, Central Air <chr>,\n#   Electrical <chr>, 1st Flr SF <int>, 2nd Flr SF <int>,\n#   Low Qual Fin SF <int>, Gr Liv Area <int>, Bsmt Full Bath <int>,\n#   Bsmt Half Bath <int>, Full Bath <int>, Half Bath <int>,\n#   Bedroom AbvGr <int>, Kitchen AbvGr <int>, Kitchen Qual <chr>,\n#   TotRms AbvGrd <int>, Functional <chr>, Fireplaces <int>,\n#   Fireplace Qu <chr>, Garage Type <chr>, Garage Yr Blt <int>,\n#   Garage Finish <chr>, Garage Cars <int>, Garage Area <int>,\n#   Garage Qual <chr>, Garage Cond <chr>, Paved Drive <chr>,\n#   Wood Deck SF <int>, Open Porch SF <int>, Enclosed Porch <int>,\n#   3Ssn Porch <int>, Screen Porch <int>, Pool Area <int>,\n#   Pool QC <chr>, Fence <chr>, Misc Feature <chr>, Misc Val <int>,\n#   Mo Sold <int>, Yr Sold <int>, Sale Type <chr>,\n#   Sale Condition <chr>, SalePrice <int>\n\n1-2. Mix group_by( ) & summarize( )\n\n# A tibble: 2 x 3\n  Street SalePrice `Lot Frontage`\n* <chr>      <dbl>          <dbl>\n1 Grvl     106663.           88.2\n2 Pave     181101.           69.1\n# A tibble: 6 x 2\n  `Sale Condition` SalePrice\n* <chr>                <dbl>\n1 Abnorml            140396.\n2 AdjLand            108917.\n3 Alloca             161844.\n4 Family             157489.\n5 Normal             175568.\n6 Partial            273374.\n\n1-3. ggplot( )\n\n\n\n\n\n\n",
-      "last_modified": "2021-03-09T12:22:08+00:00"
+      "last_modified": "2021-03-09T12:25:48+00:00"
     },
     {
       "path": "index.html",
@@ -18,7 +18,7 @@
       "path": "README.html",
       "author": [],
       "contents": "\nskku-project1\nhello // hsson-website\n\n\n",
-      "last_modified": "2021-03-09T12:22:46+00:00"
+      "last_modified": "2021-03-09T12:25:48+00:00"
     }
   ],
   "collections": []
