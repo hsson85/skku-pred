@@ -18,8 +18,6 @@ ames_raw %>%
 ```
 ### 1-2. Mix group_by( ) & summarize( )
 ```{r}
-library(tidyverse)
-library(AmesHousing)
 ames_raw %>%
   group_by(Street) %>%
   summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE),
@@ -31,8 +29,6 @@ ames_raw %>%
 ```
 ### 1-3. ggplot( )
 ```{r}
-library(tidyverse)
-library(AmesHousing)
 library(ggplot2)
 g<-ggplot(data = ames_raw %>%
             group_by(`Lot Shape`),
@@ -43,9 +39,34 @@ g
 ```
 ### 1-4. box plot( )
 ```{r}
-library(tidyverse)
-library(AmesHousing)
-library(ggplot2)
-ggplot(ames_raw, aes(y = `SalePrice`)) +
-  geom_boxplot()
+ggplot(ames_raw, aes(y = `SalePrice`)) + geom_boxplot()
+ggplot(ames_raw, aes(x = `Year Built`)) + geom_histogram(binwidth = 0.5)
+```
+### 1-5. relation between *Yr Sold* and *SalePrice* 
+```{r}
+ames_raw %>%
+  group_by(`Yr Sold`) %>%
+  summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE))
+
+h<-ggplot(data = ames_raw %>%
+          group_by(`Yr Sold`) %>%
+          summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE)),
+          aes(x= `Yr Sold`,
+              y= `SalePrice`))
+h<- h + geom_point(aes(color = as.factor(`Yr Sold`)))
+h
+```
+### 1-6. relation between *MS Zoning* and *SalePrice* 
+```{r}
+ames_raw %>%
+  group_by(`MS Zoning`) %>%
+  summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE))
+
+h<-ggplot(data = ames_raw %>%
+          group_by(`MS Zoning`) %>%
+          summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE)),
+          aes(x= `MS Zoning`,
+              y= `SalePrice`))
+h<- h + geom_point(aes(color = as.factor(`MS Zoning`)))
+h
 ```

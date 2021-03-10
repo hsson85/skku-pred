@@ -89,3 +89,26 @@ ames_raw %>%
 ames_raw %>%
   select(Street,`Year Built`,`SalePrice`) %>%
   filter(Street == "Pave") 
+
+ames_raw %>%
+  group_by(`Yr Sold`) %>%
+  summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE))
+
+h<-ggplot(data = ames_raw %>%
+          group_by(`Yr Sold`) %>%
+          summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE)),
+          aes(x= `Yr Sold`,
+              y= `SalePrice`))
+h<- h + geom_point(aes(color = as.factor(`Yr Sold`)))
+h
+
+h<-ggplot(data = ames_raw %>%
+            group_by(`Yr Sold`),
+          aes(x= `Yr Sold`,
+              y= `SalePrice`))
+h<- h + geom_point(aes(color = as.factor(`Yr Sold`)))
+h
+
+ggplot(ames_raw, aes(x = `Year Built`)) + geom_histogram(binwidth = 0.5)
+
+
