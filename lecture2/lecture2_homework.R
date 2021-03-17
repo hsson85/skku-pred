@@ -111,4 +111,13 @@ h
 
 ggplot(ames_raw, aes(x = `Year Built`)) + geom_histogram(binwidth = 0.5)
 
+ames_raw %>%
+  group_by(`MS Zoning`) %>%
+  count()
 
+as.integer(ames_raw %>% 
+             `SalePrice`)
+
+ames_raw %>%
+  as.integer(`SalePrice`)
+  

@@ -1,9 +1,16 @@
 ---
 title: "hsson - Portfolio"
+
+output:
+   distill::distill_article:
+     self_contained: false
+     code_folding: true
+     draft: true
 ---
 
+     
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 # Contents
 

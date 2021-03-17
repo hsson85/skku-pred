@@ -105,7 +105,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title"]}},"value":[{"type":"character","attributes":{},"value":["hsson - Portfolio"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["hsson - Portfolio"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","code_folding","draft"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2084,6 +2084,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h2 id="lecture-2-homework">1. Lecture 2 Homework</h2>
 <h3 id="mix-filter-select">1-1. Mix filter( ) &amp; select( )</h3>
 <div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/topepo/AmesHousing'>AmesHousing</a></span><span class='op'>)</span>
+<span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>select</span><span class='op'>(</span><span class='va'>Street</span>,<span class='va'>`Year Built`</span>,<span class='va'>`SalePrice`</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Street</span> <span class='op'>==</span> <span class='st'>"Pave"</span><span class='op'>)</span> 
+</code></pre>
+</div>
+</details>
 <pre><code># A tibble: 2,918 x 3
    Street `Year Built` SalePrice
    &lt;chr&gt;         &lt;int&gt;     &lt;int&gt;
@@ -2101,11 +2114,34 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <h3 id="mix-group_by-summarize">1-2. Mix group_by( ) &amp; summarize( )</h3>
 <div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>Street</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarize</span><span class='op'>(</span>`SalePrice`<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`SalePrice`</span>,  na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+            `Lot Frontage` <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`Lot Frontage`</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
 <pre><code># A tibble: 2 x 3
   Street SalePrice `Lot Frontage`
 * &lt;chr&gt;      &lt;dbl&gt;          &lt;dbl&gt;
 1 Grvl     106663.           88.2
 2 Pave     181101.           69.1</code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>`Sale Condition`</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarize</span><span class='op'>(</span>`SalePrice`<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`SalePrice`</span>,  na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
 <pre><code># A tibble: 6 x 2
   `Sale Condition` SalePrice
 * &lt;chr&gt;                &lt;dbl&gt;
@@ -2118,14 +2154,59 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <h3 id="ggplot">1-3. ggplot( )</h3>
 <div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span>
+<span class='va'>g</span><span class='op'>&lt;-</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+            <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>`Lot Shape`</span><span class='op'>)</span>,
+          <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>`Year Built`</span>,
+              y<span class='op'>=</span><span class='va'>`SalePrice`</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>g</span><span class='op'>&lt;-</span> <span class='va'>g</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>`Lot Shape`</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>g</span>
+</code></pre>
+</div>
+</details>
 <p><img src="about_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
 </div>
 <h3 id="box-plot">1-4. box plot( )</h3>
 <div class="layout-chunk" data-layout="l-body">
-<p><img src="about_files/figure-html5/unnamed-chunk-4-1.png" width="624" /><img src="about_files/figure-html5/unnamed-chunk-4-2.png" width="624" /></p>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>ames_raw</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>y <span class='op'>=</span> <span class='va'>`SalePrice`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_boxplot.html'>geom_boxplot</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<img src="about_files/figure-html5/unnamed-chunk-4-1.png" width="624" />
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>ames_raw</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>`Year Built`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span>binwidth <span class='op'>=</span> <span class='fl'>0.5</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="about_files/figure-html5/unnamed-chunk-4-2.png" width="624" /></p>
 </div>
 <h3 id="relation-between-yr-sold-and-saleprice">1-5. relation between <em>Yr Sold</em> and <em>SalePrice</em></h3>
 <div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>`Yr Sold`</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarize</span><span class='op'>(</span>`SalePrice`<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`SalePrice`</span>,  na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
 <pre><code># A tibble: 5 x 2
   `Yr Sold` SalePrice
 *     &lt;int&gt;     &lt;dbl&gt;
@@ -2134,10 +2215,36 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 3      2008   178842.
 4      2009   181405.
 5      2010   172598.</code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>h</span><span class='op'>&lt;-</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+          <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>`Yr Sold`</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+          <span class='fu'>summarize</span><span class='op'>(</span>`SalePrice`<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`SalePrice`</span>,  na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>,
+          <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span> <span class='va'>`Yr Sold`</span>,
+              y<span class='op'>=</span> <span class='va'>`SalePrice`</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span><span class='op'>&lt;-</span> <span class='va'>h</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>`Yr Sold`</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span>
+</code></pre>
+</div>
+</details>
 <p><img src="about_files/figure-html5/unnamed-chunk-5-1.png" width="624" /></p>
 </div>
 <h3 id="relation-between-ms-zoning-and-saleprice">1-6. relation between <em>MS Zoning</em> and <em>SalePrice</em></h3>
 <div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>`MS Zoning`</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>summarize</span><span class='op'>(</span>`SalePrice`<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`SalePrice`</span>,  na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
 <pre><code># A tibble: 7 x 2
   `MS Zoning` SalePrice
 * &lt;chr&gt;           &lt;dbl&gt;
@@ -2148,6 +2255,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 5 RH            136420.
 6 RL            191283.
 7 RM            126781.</code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>h</span><span class='op'>&lt;-</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+          <span class='fu'>group_by</span><span class='op'>(</span><span class='va'>`MS Zoning`</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+          <span class='fu'>summarize</span><span class='op'>(</span>`SalePrice`<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`SalePrice`</span>,  na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>,
+          <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span> <span class='va'>`MS Zoning`</span>,
+              y<span class='op'>=</span> <span class='va'>`SalePrice`</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span><span class='op'>&lt;-</span> <span class='va'>h</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>`MS Zoning`</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span>
+</code></pre>
+</div>
+</details>
 <p><img src="about_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
 </div>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
