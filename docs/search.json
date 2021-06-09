@@ -18,14 +18,14 @@
       "path": "index1.html",
       "title": "Homework",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2021-03-18T11:21:26+00:00"
+      "contents": "\nContents\n1. Lecture 2 Homework\n1-1. Mix filter( ) & select( )\n\n\nShow code\n\nlibrary(tidyverse)\nlibrary(AmesHousing)\names_raw %>%\n  select(Street,`Year Built`,`SalePrice`) %>%\n  filter(Street == \"Pave\") \n\n\n# A tibble: 2,918 x 3\n   Street `Year Built` SalePrice\n   <chr>         <int>     <int>\n 1 Pave           1960    215000\n 2 Pave           1961    105000\n 3 Pave           1958    172000\n 4 Pave           1968    244000\n 5 Pave           1997    189900\n 6 Pave           1998    195500\n 7 Pave           2001    213500\n 8 Pave           1992    191500\n 9 Pave           1995    236500\n10 Pave           1999    189000\n# … with 2,908 more rows\n\n\n\n\n",
+      "last_modified": "2021-06-09T15:20:08+00:00"
     },
     {
       "path": "README.html",
       "author": [],
       "contents": "\nskku-project1\nhello // hsson-website\n\n\n",
-      "last_modified": "2021-03-18T11:21:26+00:00"
+      "last_modified": "2021-06-09T15:20:08+00:00"
     }
   ],
   "collections": []

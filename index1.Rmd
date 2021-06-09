@@ -12,3 +12,14 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+# Contents
+
+## 1. Lecture 2 Homework
+### 1-1. Mix filter( ) & select( )
+```{r}
+library(tidyverse)
+library(AmesHousing)
+ames_raw %>%
+  select(Street,`Year Built`,`SalePrice`) %>%
+  filter(Street == "Pave") 
+```

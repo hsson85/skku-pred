@@ -2081,7 +2081,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h1 id="contents">Contents</h1>
+<h2 id="lecture-2-homework">1. Lecture 2 Homework</h2>
+<h3 id="mix-filter-select">1-1. Mix filter( ) &amp; select( )</h3>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/topepo/AmesHousing'>AmesHousing</a></span><span class='op'>)</span>
+<span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>select</span><span class='op'>(</span><span class='va'>Street</span>,<span class='va'>`Year Built`</span>,<span class='va'>`SalePrice`</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Street</span> <span class='op'>==</span> <span class='st'>"Pave"</span><span class='op'>)</span> 
+</code></pre>
+</div>
+</details>
+<pre><code># A tibble: 2,918 x 3
+   Street `Year Built` SalePrice
+   &lt;chr&gt;         &lt;int&gt;     &lt;int&gt;
+ 1 Pave           1960    215000
+ 2 Pave           1961    105000
+ 3 Pave           1958    172000
+ 4 Pave           1968    244000
+ 5 Pave           1997    189900
+ 6 Pave           1998    195500
+ 7 Pave           2001    213500
+ 8 Pave           1992    191500
+ 9 Pave           1995    236500
+10 Pave           1999    189000
+# … with 2,908 more rows</code></pre>
+</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
