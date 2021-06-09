@@ -2080,9 +2080,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
 <div class="d-article">
-<h1 id="lecture-2-homeworkameshousing">Lecture 2 Homework(AmesHousing)</h1>
-<h2 id="데이터-확인">1. 데이터 확인</h2>
-<h3 id="데이터는-2930개의-주택에-대해-82가지-변수로-구성">데이터는 2930개의 주택에 대해 82가지 변수로 구성</h3>
+<h1 id="lecture-2-homework">Lecture 2 Homework</h1>
+<h2 id="ameshousing">AmesHousing</h2>
+<h3 id="데이터는-2930개의-주택에-대해-82가지-변수로-구성">1. 데이터는 2930개의 주택에 대해 82가지 변수로 구성</h3>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2192,7 +2192,7 @@ $ `Sale Type`       &lt;chr&gt; &quot;WD &quot;, &quot;WD &quot;, &quot;WD &quot
 $ `Sale Condition`  &lt;chr&gt; &quot;Normal&quot;, &quot;Normal&quot;, &quot;Normal&quot;, &quot;Normal&quot;, &quot;N…
 $ SalePrice         &lt;int&gt; 215000, 105000, 172000, 244000, 189900, 19…</code></pre>
 </div>
-<h3 id="mix-filter-select-를-이용하여-streetpave인-주택가격과-주택이-지어진-연도를-파악">2. Mix filter( ) &amp; select( )를 이용하여 street=“pave”인 주택가격과 주택이 지어진 연도를 파악</h3>
+<h3 id="streetpave인-주택가격과-주택이-지어진-연도를-파악">2. street=“pave”인 주택가격과 주택이 지어진 연도를 파악</h3>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2279,7 +2279,7 @@ Show code
 </details>
 <p><img src="about_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
-<h3 id="box-plot">1-4. box plot( )</h3>
+<h3 id="주택가격을-boxplot으로-확인하고-주택이-지어진-연도별-히스토그램">5. 주택가격을 boxplot으로 확인하고 주택이 지어진 연도별 히스토그램</h3>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2302,7 +2302,7 @@ Show code
 </details>
 <p><img src="about_files/figure-html5/unnamed-chunk-5-2.png" width="624" /></p>
 </div>
-<h3 id="relation-between-yr-sold-and-saleprice">1-5. relation between <em>Yr Sold</em> and <em>SalePrice</em></h3>
+<h3 id="주택이-팔린-연도의-평균-주택가격-확인">6. 주택이 팔린 연도의 평균 주택가격 확인</h3>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2340,7 +2340,7 @@ Show code
 </details>
 <p><img src="about_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
 </div>
-<h3 id="relation-between-ms-zoning-and-saleprice">1-6. relation between <em>MS Zoning</em> and <em>SalePrice</em></h3>
+<h3 id="relation-between-ms-zoning-and-saleprice">7. relation between <em>MS Zoning</em> and <em>SalePrice</em></h3>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2380,7 +2380,293 @@ Show code
 </details>
 <p><img src="about_files/figure-html5/unnamed-chunk-7-1.png" width="624" /></p>
 </div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h3 id="다른-부분에-대해서도-그래프-등을-통해-관계-확인">8. 다른 부분에 대해서도 그래프 등을 통해 관계 확인</h3>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarise</a></span><span class='op'>(</span><span class='va'>ames_raw</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code># A tibble: 1 x 0</code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>Street</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>`SalePrice`<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`SalePrice`</span>,  na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,
+            `Lot Frontage` <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`Lot Frontage`</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code># A tibble: 2 x 3
+  Street SalePrice `Lot Frontage`
+* &lt;chr&gt;      &lt;dbl&gt;          &lt;dbl&gt;
+1 Grvl     106663.           88.2
+2 Pave     181101.           69.1</code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Street</span> <span class='op'>==</span> <span class='st'>"Pave"</span><span class='op'>)</span> 
+</code></pre>
+</div>
+</details>
+<pre><code># A tibble: 2,918 x 82
+   Order PID       `MS SubClass` `MS Zoning` `Lot Frontage` `Lot Area`
+   &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;                &lt;int&gt;      &lt;int&gt;
+ 1     1 05263011… 020           RL                     141      31770
+ 2     2 05263500… 020           RH                      80      11622
+ 3     3 05263510… 020           RL                      81      14267
+ 4     4 05263530… 020           RL                      93      11160
+ 5     5 05271050… 060           RL                      74      13830
+ 6     6 05271050… 060           RL                      78       9978
+ 7     7 05271271… 120           RL                      41       4920
+ 8     8 05271450… 120           RL                      43       5005
+ 9     9 05271460… 120           RL                      39       5389
+10    10 05271621… 060           RL                      60       7500
+# … with 2,908 more rows, and 76 more variables: Street &lt;chr&gt;,
+#   Alley &lt;chr&gt;, Lot Shape &lt;chr&gt;, Land Contour &lt;chr&gt;,
+#   Utilities &lt;chr&gt;, Lot Config &lt;chr&gt;, Land Slope &lt;chr&gt;,
+#   Neighborhood &lt;chr&gt;, Condition 1 &lt;chr&gt;, Condition 2 &lt;chr&gt;,
+#   Bldg Type &lt;chr&gt;, House Style &lt;chr&gt;, Overall Qual &lt;int&gt;,
+#   Overall Cond &lt;int&gt;, Year Built &lt;int&gt;, Year Remod/Add &lt;int&gt;,
+#   Roof Style &lt;chr&gt;, Roof Matl &lt;chr&gt;, Exterior 1st &lt;chr&gt;,
+#   Exterior 2nd &lt;chr&gt;, Mas Vnr Type &lt;chr&gt;, Mas Vnr Area &lt;int&gt;,
+#   Exter Qual &lt;chr&gt;, Exter Cond &lt;chr&gt;, Foundation &lt;chr&gt;,
+#   Bsmt Qual &lt;chr&gt;, Bsmt Cond &lt;chr&gt;, Bsmt Exposure &lt;chr&gt;,
+#   BsmtFin Type 1 &lt;chr&gt;, BsmtFin SF 1 &lt;int&gt;, BsmtFin Type 2 &lt;chr&gt;,
+#   BsmtFin SF 2 &lt;int&gt;, Bsmt Unf SF &lt;int&gt;, Total Bsmt SF &lt;int&gt;,
+#   Heating &lt;chr&gt;, Heating QC &lt;chr&gt;, Central Air &lt;chr&gt;,
+#   Electrical &lt;chr&gt;, 1st Flr SF &lt;int&gt;, 2nd Flr SF &lt;int&gt;,
+#   Low Qual Fin SF &lt;int&gt;, Gr Liv Area &lt;int&gt;, Bsmt Full Bath &lt;int&gt;,
+#   Bsmt Half Bath &lt;int&gt;, Full Bath &lt;int&gt;, Half Bath &lt;int&gt;,
+#   Bedroom AbvGr &lt;int&gt;, Kitchen AbvGr &lt;int&gt;, Kitchen Qual &lt;chr&gt;,
+#   TotRms AbvGrd &lt;int&gt;, Functional &lt;chr&gt;, Fireplaces &lt;int&gt;,
+#   Fireplace Qu &lt;chr&gt;, Garage Type &lt;chr&gt;, Garage Yr Blt &lt;int&gt;,
+#   Garage Finish &lt;chr&gt;, Garage Cars &lt;int&gt;, Garage Area &lt;int&gt;,
+#   Garage Qual &lt;chr&gt;, Garage Cond &lt;chr&gt;, Paved Drive &lt;chr&gt;,
+#   Wood Deck SF &lt;int&gt;, Open Porch SF &lt;int&gt;, Enclosed Porch &lt;int&gt;,
+#   3Ssn Porch &lt;int&gt;, Screen Porch &lt;int&gt;, Pool Area &lt;int&gt;,
+#   Pool QC &lt;chr&gt;, Fence &lt;chr&gt;, Misc Feature &lt;chr&gt;, Misc Val &lt;int&gt;,
+#   Mo Sold &lt;int&gt;, Yr Sold &lt;int&gt;, Sale Type &lt;chr&gt;,
+#   Sale Condition &lt;chr&gt;, SalePrice &lt;int&gt;</code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>p</span><span class='op'>&lt;-</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+            <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>Street</span><span class='op'>)</span>,
+          <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>`Year Built`</span>,
+              y<span class='op'>=</span><span class='va'>`Lot Frontage`</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>p</span><span class='op'>&lt;-</span> <span class='va'>p</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>Street</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>p</span>
+</code></pre>
+</div>
+</details>
+<img src="about_files/figure-html5/unnamed-chunk-8-1.png" width="624" />
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>g</span><span class='op'>&lt;-</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+            <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>Neighborhood</span><span class='op'>)</span>,
+          <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>`Year Built`</span>,
+              y<span class='op'>=</span><span class='va'>`Lot Frontage`</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>g</span><span class='op'>&lt;-</span> <span class='va'>g</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>Neighborhood</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>g</span>
+</code></pre>
+</div>
+</details>
+<img src="about_files/figure-html5/unnamed-chunk-8-2.png" width="624" />
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>h</span><span class='op'>&lt;-</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+            <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>`Lot Shape`</span><span class='op'>)</span>,
+          <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>`Year Built`</span>,
+              y<span class='op'>=</span><span class='va'>`SalePrice`</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span><span class='op'>&lt;-</span> <span class='va'>h</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>`Lot Shape`</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span>
+</code></pre>
+</div>
+</details>
+<img src="about_files/figure-html5/unnamed-chunk-8-3.png" width="624" />
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>h</span><span class='op'>&lt;-</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+            <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>`Sale Condition`</span><span class='op'>)</span>,
+          <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>`Year Built`</span>,
+              y<span class='op'>=</span><span class='va'>`SalePrice`</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span><span class='op'>&lt;-</span> <span class='va'>h</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>`Sale Condition`</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span>
+</code></pre>
+</div>
+</details>
+<img src="about_files/figure-html5/unnamed-chunk-8-4.png" width="624" />
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>h</span><span class='op'>&lt;-</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+            <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>`Sale Condition`</span><span class='op'>==</span> <span class='st'>"Family"</span><span class='op'>)</span>,
+          <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>`Year Built`</span>,
+              y<span class='op'>=</span><span class='va'>`SalePrice`</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span><span class='op'>&lt;-</span> <span class='va'>h</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>`Sale Condition`</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span>
+</code></pre>
+</div>
+</details>
+<img src="about_files/figure-html5/unnamed-chunk-8-5.png" width="624" />
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>s</span><span class='op'>&lt;-</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+            <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>`Year Built`</span><span class='op'>)</span>,
+          <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span> <span class='va'>Street</span>,
+              y<span class='op'>=</span><span class='va'>`SalePrice`</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>s</span><span class='op'>&lt;-</span> <span class='va'>s</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>`Year Built`</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>s</span>
+</code></pre>
+</div>
+</details>
+<img src="about_files/figure-html5/unnamed-chunk-8-6.png" width="624" />
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>`Sale Condition`</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>`SalePrice`<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`SalePrice`</span>,  na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code># A tibble: 6 x 2
+  `Sale Condition` SalePrice
+* &lt;chr&gt;                &lt;dbl&gt;
+1 Abnorml            140396.
+2 AdjLand            108917.
+3 Alloca             161844.
+4 Family             157489.
+5 Normal             175568.
+6 Partial            273374.</code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>Street</span>,<span class='va'>`Year Built`</span>,<span class='va'>`SalePrice`</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>Street</span> <span class='op'>==</span> <span class='st'>"Pave"</span><span class='op'>)</span> 
+</code></pre>
+</div>
+</details>
+<pre><code># A tibble: 2,918 x 3
+   Street `Year Built` SalePrice
+   &lt;chr&gt;         &lt;int&gt;     &lt;int&gt;
+ 1 Pave           1960    215000
+ 2 Pave           1961    105000
+ 3 Pave           1958    172000
+ 4 Pave           1968    244000
+ 5 Pave           1997    189900
+ 6 Pave           1998    195500
+ 7 Pave           2001    213500
+ 8 Pave           1992    191500
+ 9 Pave           1995    236500
+10 Pave           1999    189000
+# … with 2,908 more rows</code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>`Yr Sold`</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>`SalePrice`<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`SalePrice`</span>,  na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code># A tibble: 5 x 2
+  `Yr Sold` SalePrice
+*     &lt;int&gt;     &lt;dbl&gt;
+1      2006   181762.
+2      2007   185138.
+3      2008   178842.
+4      2009   181405.
+5      2010   172598.</code></pre>
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>h</span><span class='op'>&lt;-</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+          <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>`Yr Sold`</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+          <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>`SalePrice`<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`SalePrice`</span>,  na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span>,
+          <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span> <span class='va'>`Yr Sold`</span>,
+              y<span class='op'>=</span> <span class='va'>`SalePrice`</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span><span class='op'>&lt;-</span> <span class='va'>h</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>`Yr Sold`</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span>
+</code></pre>
+</div>
+</details>
+<img src="about_files/figure-html5/unnamed-chunk-8-7.png" width="624" />
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>h</span><span class='op'>&lt;-</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+            <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>`Yr Sold`</span><span class='op'>)</span>,
+          <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span> <span class='va'>`Yr Sold`</span>,
+              y<span class='op'>=</span> <span class='va'>`SalePrice`</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span><span class='op'>&lt;-</span> <span class='va'>h</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>color <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>`Yr Sold`</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>h</span>
+</code></pre>
+</div>
+</details>
+<img src="about_files/figure-html5/unnamed-chunk-8-8.png" width="624" />
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ames_raw</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>`MS Zoning`</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/count.html'>count</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<pre><code># A tibble: 7 x 2
+# Groups:   MS Zoning [7]
+  `MS Zoning`     n
+  &lt;chr&gt;       &lt;int&gt;
+1 A (agr)         2
+2 C (all)        25
+3 FV            139
+4 I (all)         2
+5 RH             27
+6 RL           2273
+7 RM            462</code></pre>
+</div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

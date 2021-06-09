@@ -12,10 +12,10 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-# Lecture 2 Homework(AmesHousing)
+# Lecture 2 Homework
 
-## 1. 데이터 확인
-### 데이터는 2930개의 주택에 대해 82가지 변수로 구성
+## AmesHousing
+### 1. 데이터는 2930개의 주택에 대해 82가지 변수로 구성
 ```{r}
 library(dplyr)
 library(tidyverse)
@@ -24,7 +24,7 @@ library(AmesHousing)
 dim(ames_raw)
 glimpse(ames_raw)
 ```
-### 2. Mix filter( ) & select( )를 이용하여 street="pave"인 주택가격과 주택이 지어진 연도를 파악
+### 2. street="pave"인 주택가격과 주택이 지어진 연도를 파악
 ```{r}
 ames_raw %>%
   select(Street,`Year Built`,`SalePrice`) %>%
@@ -51,12 +51,12 @@ g<-ggplot(data = ames_raw %>%
 g<- g + geom_point(aes(color = as.factor(`Lot Shape`)))
 g
 ```
-### 1-4. box plot( )
+### 5. 주택가격을 boxplot으로 확인하고 주택이 지어진 연도별 히스토그램
 ```{r}
 ggplot(ames_raw, aes(y = `SalePrice`)) + geom_boxplot()
 ggplot(ames_raw, aes(x = `Year Built`)) + geom_histogram(binwidth = 0.5)
 ```
-### 1-5. relation between *Yr Sold* and *SalePrice* 
+### 6. 주택이 팔린 연도의 평균 주택가격 확인 
 ```{r}
 ames_raw %>%
   group_by(`Yr Sold`) %>%
@@ -70,7 +70,7 @@ h<-ggplot(data = ames_raw %>%
 h<- h + geom_point(aes(color = as.factor(`Yr Sold`)))
 h
 ```
-### 1-6. relation between *MS Zoning* and *SalePrice* 
+### 7. relation between *MS Zoning* and *SalePrice* 
 ```{r}
 ames_raw %>%
   group_by(`MS Zoning`) %>%
@@ -83,4 +83,89 @@ h<-ggplot(data = ames_raw %>%
               y= `SalePrice`))
 h<- h + geom_point(aes(color = as.factor(`MS Zoning`)))
 h
+```
+### 8. 다른 부분에 대해서도 그래프 등을 통해 관계 확인   
+```{r}
+summarise(ames_raw)
+
+ames_raw %>%
+  group_by(Street) %>%
+  summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE),
+            `Lot Frontage` = mean(`Lot Frontage`, na.rm = TRUE))
+
+ames_raw %>%
+  filter(Street == "Pave") 
+   
+p<-ggplot(data = ames_raw %>%
+            group_by(Street),
+          aes(x=`Year Built`,
+              y=`Lot Frontage`))
+p<- p + geom_point(aes(color = as.factor(Street)))
+p
+
+g<-ggplot(data = ames_raw %>%
+            group_by(Neighborhood),
+          aes(x=`Year Built`,
+              y=`Lot Frontage`))
+g<- g + geom_point(aes(color = as.factor(Neighborhood)))
+g
+
+h<-ggplot(data = ames_raw %>%
+            group_by(`Lot Shape`),
+          aes(x=`Year Built`,
+              y=`SalePrice`))
+h<- h + geom_point(aes(color = as.factor(`Lot Shape`)))
+h
+
+h<-ggplot(data = ames_raw %>%
+            group_by(`Sale Condition`),
+          aes(x=`Year Built`,
+              y=`SalePrice`))
+h<- h + geom_point(aes(color = as.factor(`Sale Condition`)))
+h
+
+h<-ggplot(data = ames_raw %>%
+            filter(`Sale Condition`== "Family"),
+          aes(x=`Year Built`,
+              y=`SalePrice`))
+h<- h + geom_point(aes(color = as.factor(`Sale Condition`)))
+h
+
+s<-ggplot(data = ames_raw %>%
+            group_by(`Year Built`),
+          aes(x= Street,
+              y=`SalePrice`))
+s<- s + geom_point(aes(color = as.factor(`Year Built`)))
+s
+
+ames_raw %>%
+  group_by(`Sale Condition`) %>%
+  summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE))
+
+ames_raw %>%
+  select(Street,`Year Built`,`SalePrice`) %>%
+  filter(Street == "Pave") 
+
+ames_raw %>%
+  group_by(`Yr Sold`) %>%
+  summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE))
+
+h<-ggplot(data = ames_raw %>%
+          group_by(`Yr Sold`) %>%
+          summarize(`SalePrice`= mean(`SalePrice`,  na.rm = TRUE)),
+          aes(x= `Yr Sold`,
+              y= `SalePrice`))
+h<- h + geom_point(aes(color = as.factor(`Yr Sold`)))
+h
+
+h<-ggplot(data = ames_raw %>%
+            group_by(`Yr Sold`),
+          aes(x= `Yr Sold`,
+              y= `SalePrice`))
+h<- h + geom_point(aes(color = as.factor(`Yr Sold`)))
+h
+
+ames_raw %>%
+  group_by(`MS Zoning`) %>%
+  count()
 ```
